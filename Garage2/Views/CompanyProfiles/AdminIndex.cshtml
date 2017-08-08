@@ -1,0 +1,47 @@
+﻿@model IEnumerable<Garage2.Models.CompanyProfile>
+@{
+    ViewBag.Title = "AdminIndex";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div style="background-color: #757575">
+    <p style="text-align:center;font-size:24px;color:white;padding:15px; text-transform:uppercase">Administation panel</p>
+    <hr />
+</div>
+
+<p>
+    <button class="waves-effect waves-light btn" type="button" onclick="location.href='@Url.Action("Create","CompanyProfiles")'"> Nowa pozycja  </button>
+</p>
+<table class="tableadmin">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ProfileContent)
+        </th>
+        <th>
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProfileContent)
+            </td>
+            <td>
+                <button class="myButton tooltipped" data-position="top" data-delay="30" data-tooltip="Edytuj" type="button"
+                        onclick="location.href='@Url.Action("Edit","CompanyProfiles",new { id = item.CompanyProfileId })'">
+                    <i class="material-icons left">mode_edit</i>
+                </button>
+                <button class="myButton tooltipped" data-position="top" data-delay="30" data-tooltip="Szczegóły" type="button"
+                        onclick="location.href='@Url.Action("Details","CompanyProfiles",new { id = item.CompanyProfileId })'">
+                    <i class="material-icons left">comment</i>
+                </button>
+                <button class="myButton tooltipped" data-position="top" data-delay="30" data-tooltip="Usuń" type="button"
+                        onclick="location.href='@Url.Action("Delete","CompanyProfiles",new { id = item.CompanyProfileId })'">
+                    <i class="material-icons left">delete</i>
+                </button>
+            </td>
+        </tr>
+    }
+
+</table>

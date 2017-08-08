@@ -1,0 +1,39 @@
+﻿@model Garage2.Models.Admin.Hour
+
+@{
+    ViewBag.Title = "Delete";
+}
+<h4>USUWANIE <img src="~/Content/Images/delete-empty.png" /> </h4>
+<h5><span style="color:red">Czy na pewno usunąć wybraną pozycję?</span></h5>
+<br />
+<div>
+    
+    <table class="tableadmin">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Day)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Hours)
+            </th>
+        </tr>
+        <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => Model.Day)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => Model.Hours)
+                </td>
+            </tr>
+        
+    </table>
+    <br/>
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Usuń" class="waves-effect-3 waves-light btn" />
+            <button class="waves-effect-3 waves-light btn" type="button" onclick="location.href='@Url.Action("AdminIndex","Hours")'"> Powrót do listy  </button>
+        </div>
+    }
+</div>

@@ -1,0 +1,35 @@
+﻿@model IEnumerable<Garage2.Models.Sklep.Towar>
+@{
+    ViewBag.Title = "Promocje";
+    Layout = "~/Views/Shared/_SklepLayout.cshtml";
+}
+
+<div class="container">
+    <div>
+        <table class="table amber darken-1">
+            <thead>
+                <tr>
+                    <th data-field="id" class="amber darken-1">Foto</th>
+                    <th data-field="name" class="amber darken-1">Nazwa</th>
+                    <th data-field="price" class="amber darken-1">Cena</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                @foreach (var towar in Model)
+                {
+                    <tr>
+                        <td class="amber accent-2">
+                            <a href="@Url.Action("Szczegoly",new {id=towar.IdTowaru})">
+                                <img alt="@towar.Nazwa" src="@towar.FotoUrl" height="40" width="40" />
+                            </a>
+                        </td>
+                        <td class="amber accent-2">@towar.Nazwa</td>
+                        <td class="amber accent-2">@towar.Cena</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+

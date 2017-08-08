@@ -1,0 +1,91 @@
+﻿@model IEnumerable<Garage2.Models.Sklep.Towar>
+
+@{
+    ViewBag.Title = "AdminIndex";
+}
+<div class="container-fluid">
+    <div style="background-color: #757575">
+        <p style="text-align:center;font-size:24px;color:white;padding:15px; text-transform:uppercase">Administation panel</p>
+        <hr />
+    </div>
+
+    <p>
+        <button class="waves-effect waves-light btn" type="button" onclick="location.href='@Url.Action("Create","Sklep")'"> Nowa pozycja  </button>
+    </p>
+    <table class="tableadmin responsive-table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.IdTowaru)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nazwa)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Kod)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cena)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FotoUrl)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Opis)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Promocja)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdRodzaju)
+            </th>
+            <th>
+                Edycja / Szczegóły / Usuwanie
+            </th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IdTowaru)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nazwa)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Kod)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Cena)
+                </td>
+                <td>
+                    <img src="@item.FotoUrl" height="40" width="40" />
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Opis)
+                </td>
+                <td>
+                    @Html.EditorFor(modelItem => item.Promocja)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IdRodzaju)
+                </td>
+                <td>
+                    <button class="myButton tooltipped" data-position="top" data-delay="30" data-tooltip="Edytuj" type="button"
+                            onclick="location.href='@Url.Action("Edit","Sklep",new { id = item.IdTowaru })'">
+                        <i class="material-icons left">mode_edit</i>
+                    </button>
+                    <button class="myButton tooltipped" data-position="top" data-delay="30" data-tooltip="Szczegóły" type="button"
+                            onclick="location.href='@Url.Action("Details","Sklep",new { id = item.IdTowaru })'">
+                        <i class="material-icons left">comment</i>
+                    </button>
+                    <button class="myButton tooltipped" data-position="top" data-delay="30" data-tooltip="Usuń" type="button"
+                            onclick="location.href='@Url.Action("Delete","Sklep",new { id = item.IdTowaru })'">
+                        <i class="material-icons left">delete</i>
+                    </button>
+                </td>
+            </tr>
+        }
+    </table>
+
+</div>

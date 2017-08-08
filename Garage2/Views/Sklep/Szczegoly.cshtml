@@ -1,0 +1,44 @@
+﻿@model Garage2.Models.Sklep.Towar
+@{
+    ViewBag.Title = Model.Nazwa;
+    Layout = "~/Views/Shared/_DetailLayout.cshtml";
+}
+
+<!--Card-->
+<div class="card">
+
+    <!--Card image-->
+    <img class="img-fluid" src="@Model.FotoUrl" alt="Card image cap" width="200">
+    <!--/.Card image-->
+    <!--Card content-->
+    <div class="card-block">
+        <!--Title-->
+        <center>
+            @if (Model.Promocja == true)
+            {
+                <div>
+                    <img src="~/Content/Images/promo3.png" width="315" height="100"/>
+                </div>
+                @*<div class="chip">
+                    <img src="~/Content/Images/promo.png" alt="Promocja !!!" />
+                    Promocja :)
+                </div>*@
+            }
+            <h4 class="card-title"><span style="text-align:center;color:orange;font-weight:bold; text-transform:uppercase">@Model.Nazwa</span></h4>
+            <!--Text-->
+            <p>Kod produktu: @Model.Kod</p>
+            <p>Cena: @Model.Cena</p>
+            <p>Opis produktu: @Model.Opis</p>
+        </center>
+        <div>
+            <center>
+                <button class="myButton1" type="button" onclick="location.href='@Url.Action("DodajDoKoszyka", "Koszyk",new { id = Model.IdTowaru }, "")'"> Dodaj do koszyka </button>
+            </center>
+            @*@Html.ActionLink("DodajDoKoszyka", "DodajDoKoszyka", "Koszyk", new { id = Model.IdTowaru }, "")*@
+        </div>
+    </div>
+    <!--/.Card content-->
+
+</div>
+<!--/.Card-->
+

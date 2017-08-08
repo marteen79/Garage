@@ -1,0 +1,26 @@
+﻿@model IEnumerable<Garage2.Models.Admin.Hour>
+
+@{
+    ViewBag.Title = "Godziny otwarcia";
+}
+<table class="table amber darken-1">
+    <tr>
+        <th class="amber darken-1">
+            @Html.DisplayNameFor(model => model.Day)
+        </th>
+        <th class="amber darken-1">
+            @Html.DisplayNameFor(model => model.Hours)
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td class="amber accent-2">
+            @Html.DisplayFor(modelItem => item.Day)
+        </td>
+        <td class="amber accent-2">
+            @Html.DisplayFor(modelItem => item.Hours)
+        </td>
+    </tr>
+}
+</table>

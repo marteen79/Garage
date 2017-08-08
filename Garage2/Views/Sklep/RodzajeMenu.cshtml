@@ -1,0 +1,48 @@
+﻿@model IEnumerable<Garage2.Models.Sklep.Rodzaj>
+
+<br/>
+
+@*<table class="tableadmin">
+    <thead>
+        <tr>
+            <th data-field="id">Kategorie</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var rodzaj in Model)
+        {
+            <tr>
+                <td>
+                    @Html.ActionLink(rodzaj.Nazwa, "Index",
+                    "Sklep", new { id = rodzaj.IdRodzaju }, null)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>*@
+
+<div><center><span style="text-align:center; font-weight:bold; color:orange; font-size:18px">KATEGORIE</span></center></div>
+@foreach (var rodzaj in Model)
+{
+<button class="myButton1" type="button" 
+  onclick="location.href='@Url.Action("Index", "Sklep",new { id = rodzaj.IdRodzaju }, null)'"> @rodzaj.Nazwa  </button>
+}
+
+<button class="myButton1" type="button"
+        onclick="location.href='@Url.Action("Promocje", "Sklep")'"> Promocje </button>
+
+
+
+
+
+
+
+@*<ul class="collection">
+        @foreach (var rodzaj in Model)
+        {
+            <li class="collection-item">
+                @Html.ActionLink(rodzaj.Nazwa, "Index",
+               "Sklep", new { id = rodzaj.IdRodzaju }, null)
+            </li>
+        }
+    </ul>*@

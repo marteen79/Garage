@@ -1,0 +1,78 @@
+﻿@model Garage2.Models.Sklep.Towar
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h4>TOWAR - SZCZEGÓŁY <img src="~/Content/Images/comment-text.png" /> </h4>
+<br />
+
+<div>
+
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.IdTowaru)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IdTowaru)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nazwa)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nazwa)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Kod)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Kod)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Cena)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cena)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.FotoUrl)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FotoUrl)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Opis)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Opis)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Promocja)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Promocja)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.IdRodzaju)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IdRodzaju)
+        </dd>
+
+    </dl>
+</div>
+<div class="col-md-offset-2 col-md-10">
+    <button class="waves-effect-3 waves-light btn" type="button" onclick="location.href='@Url.Action("Edit","Sklep",new { id = Model.IdTowaru })'"> Edycja  </button>
+    <button class="waves-effect-3 waves-light btn" type="button" onclick="location.href='@Url.Action("AdminIndex","Sklep",new { id = Model.IdTowaru })'"> Powrót do listy  </button>
+</div>
+

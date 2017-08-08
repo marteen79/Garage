@@ -1,0 +1,191 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0" />
+    <title>@ViewBag.Title</title>
+    <!-- CSS  -->
+
+    <link href="~/Content/Fontello/CSS/fontello.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="~/Content/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    <link href="~/Content/Site.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    <link href="~/Content/footer-distributed-with-address-and-phones.css" rel="stylesheet" />
+    <link href="~/Content/card.css" rel="stylesheet" />
+    
+</head>
+<body>
+    <div class="container-fluid">
+
+        <nav class="orange" role="navigation">
+            <div class="nav-wrapper container">
+
+                <button class="hide-on-small-and-down" type="button" style="height:65px;width:65px; 
+                padding:0;margin:0;border:hidden" onclick="location.href='@Url.Action("Index","Home")'">
+                    <img src="~/Content/Images/logo3_image.png" height="65" />
+                </button>
+
+                <ul class="right hide-on-med-and-down">
+                    <li>@Html.ActionLink("Strona główna", "Index", "Home")</li>
+                    <li>@Html.ActionLink("Sklep", "Index", "Sklep")</li>
+                    <li>@Html.ActionLink("O nas", "Index", "CompanyProfiles")</li>
+                    <li>@Html.ActionLink("Oferta", "Index", "Offers")</li>
+                    <li>@Html.ActionLink("Godziny otwarcia", "Index", "Hours")</li>
+                    <li>@Html.ActionLink("Kontakt", "Contact", "Home")</li>
+                    <li>@Html.ActionLink("Administracja", "Panel", "Home")</li>
+
+                </ul>
+                <ul id="nav-mobile" class="side-nav">
+                    <li>@Html.ActionLink("Strona główna", "Index", "Home")</li>
+                    <li>@Html.ActionLink("Sklep", "Index", "Sklep")</li>
+                    <li>@Html.ActionLink("O nas", "Index", "CompanyProfiles")</li>
+                    <li>@Html.ActionLink("Oferta", "Index", "Offers")</li>
+                    <li>@Html.ActionLink("Godziny otwarcia", "Index", "Hours")</li>
+                    <li>@Html.ActionLink("Kontakt", "Contact", "Home")</li>
+                    <li>@Html.ActionLink("Administracja", "Panel", "Home")</li>
+                </ul>
+                <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+            </div>
+        </nav>
+
+        <!-- *********************** Main content of the page layout *********************** -->
+
+        <div class="container">
+            <br />
+            @RenderBody()
+
+            @*@RenderSection("featured", required: false)*@
+        </div>
+
+
+        <!-- *********************** Main content of the page layout *********************** -->
+        <!--   Icon Section   -->
+        <br/>
+            <div class="container">
+                <div class="row">
+                    <div class="col s6 m2">
+                        <div>
+                            <a href="https://www.pirelli.com/tyres/pl-pl/index">
+                                <img src="~/Content/Images/logo_pirelli.png" height="60" width="60">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col s6 m2">
+                        <div>
+                            <a href="http://www.michelin.pl/" target="_blank">
+                                <img src="~/Content/Images/logo_michelin.png" height="60" width="60">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col s6 m2">
+                        <div>
+                            <a href="http://www.bridgestone.pl/" target="_blank">
+                                <img src="~/Content/Images/logo_bridgestone.png" height="60" width="60">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col s6 m2">
+                        <div>
+                            <a href="http://www.firestone.pl/osobowe-suv-4x4/" target="_blank">
+                                <img src="~/Content/Images/logo_firestone.png" height="60" width="60">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col s6 m2">
+                        <div>
+                            <a href="https://www.goodyear.eu/pl_pl/consumer/tires/car.html#/" target="_blank">
+                                <img src="~/Content/Images/logo_goodyear.png" height="60" width="60">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col s6 m2">
+                        <div>
+                            <a href="http://www.continental-opony.pl/samochod" target="_blank">
+                                <img src="~/Content/Images/logo_continental.png" height="60" width="60">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        <footer class="footer-distributed">
+
+            <div class="footer-left">
+              
+                <p class="footer-links">
+                    <a href="#">Strona Główna</a>
+                    -
+                    <a href="#">O nas</a>
+                    -
+                    <a href="#">Oferta</a>
+                    <br/>
+                    <a href="#">Partnerzy</a>
+                    -
+                    <a href="#">FAQ</a>
+                    -
+                    <a href="#">Kontakt</a>
+                </p>
+
+                <p class="footer-company-name">MT Design &copy; 2017</p>
+            </div>
+
+
+            <div class="footer-center">
+                <div class="row">
+                    <div class="col s12 m12 l4">
+                        <br/>
+                        <span style="color:white">Oddział Kraków</span><br />
+                        <p class="footer-company-about">
+                            <span>ul.Długa 18 <br />
+                        tel. 123-456-789</span>
+                        </p>  
+                    </div>
+                    <div class="col s12 m12 l4">
+                        
+                            <img src="~/Content/Images/logo3_image.png" />
+                 
+                    </div>
+                    <div class="col s12 m12 l4">
+                        <br />
+                        <span style="color:white">Oddział Warszawa</span><br />
+                        <p class="footer-company-about">
+                            <span>
+                                ul.Boczna 18 <br />
+                                tel. 987-654-321
+                            </span>
+                        </p>
+                    </div>
+                </div>
+                </div>
+
+                <div class="footer-right">
+                    <p class="footer-company-about">
+                        <span>Dołącz do nas:</span>
+                    </p>
+                    <div class="footer-icons">
+                        <a href="#"><img src="~/Content/Images/fb.ico" height="40" width="38"></a>
+                        <a href="#"><img src="~/Content/Images/g.ico" height="40" width="38"></a>
+                        <a href="#"><img src="~/Content/Images/twitter.ico" height="40" width="38"></a>
+                        <a href="#"><img src="~/Content/Images/yt.ico" height="40" width="38"></a>
+                    </div>
+                </div>
+</footer>
+
+        @*********************************** footer ***********************************@
+
+        <!--  Scripts-->
+        @*<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>*@
+        <script src="~/Scripts/jquery.validate.js"></script>
+        <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js"></script>
+        <script src="js/materialize.js"></script>
+        <script src="js/init.js"></script>
+        <script>
+            $(".button-collapse").sideNav();
+        </script>
+        <script src="~/Scripts/bootstrap.js"></script>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,176 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0" />
+    <title>@ViewBag.Title</title>
+    <!-- CSS  -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="~/Content/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    <link href="~/Content/Site.css" type="text/css" rel="stylesheet" media="screen,projection" />
+
+</head>
+<body>
+    <div class="container-fluid">
+
+        <nav class="orange" role="navigation">
+            <div class="nav-wrapper container">
+                @*<a id="logo-container" href="#" class="brand-logo">
+                        <img src="~/Content/Images/logo3_image.png" height="65"/>
+                    </a>*@
+
+                <button class="hide-on-small-and-down" type="button" style="height:65px;width:65px; padding:0;margin:0;border:hidden" onclick="location.href='@Url.Action("Index","Home")'">
+                    <img src="~/Content/Images/logo3_image.png" height="65" />
+                </button>
+
+                <ul class="right hide-on-med-and-down">
+                    <li>@Html.ActionLink("Strona główna", "Index", "Home")</li>
+                    <li>@Html.ActionLink("Sklep", "Index", "Sklep")</li>
+                    <li>@Html.ActionLink("O nas", "Index", "CompanyProfiles")</li>
+                    <li>@Html.ActionLink("Oferta", "Index", "Offers")</li>
+                    <li>@Html.ActionLink("Godziny otwarcia", "Index", "Hours")</li>
+                    <li>@Html.ActionLink("Kontakt", "Contact", "Home")</li>
+                    <li>@Html.ActionLink("Administracja", "Panel", "Home")</li>
+                    <li>@{Html.RenderAction("LiczbaTowarowWKoszyku", "Koszyk");}</li>
+                    @*<img src="~/Content/Images/koszyk.png" height="65" width="65" />*@
+                </ul>
+                <ul id="nav-mobile" class="side-nav">
+                    <li><a href="#">Navbar Link</a></li>
+                </ul>
+                <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+            </div>
+        </nav>
+        <!-- *********************** Main content of the page layout *********************** -->
+        <div class="section no-pad-bot" id="index-banner">
+            <div class="row">
+                <div class="col s12 m2 l2">
+                    @{Html.RenderAction("RodzajeMenu", "Sklep");}
+                </div>
+                <div class="col s12 m8 l3 offset-l1">
+                    @RenderBody()
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <br />
+        </div>
+
+
+        <!-- *********************** Main content of the page layout *********************** -->
+        <!--   Icon Section   -->
+
+        <br />
+        <div class="container">
+            <div class="row">
+                <div class="col s6 m2">
+                    <div>
+                        <a href="https://www.pirelli.com/tyres/pl-pl/index">
+                            <img src="~/Content/Images/logo_pirelli.png" height="80" width="80">
+                        </a>
+                    </div>
+                </div>
+                <div class="col s6 m2">
+                    <div>
+                        <a href="http://www.michelin.pl/" target="_blank">
+                            <img src="~/Content/Images/logo_michelin.png" height="80" width="80">
+                        </a>
+                    </div>
+                </div>
+                <div class="col s6 m2">
+                    <div>
+                        <a href="http://www.bridgestone.pl/" target="_blank">
+                            <img src="~/Content/Images/logo_bridgestone.png" height="80" width="80">
+                        </a>
+                    </div>
+                </div>
+                <div class="col s6 m2">
+                    <div>
+                        <a href="http://www.firestone.pl/osobowe-suv-4x4/" target="_blank">
+                            <img src="~/Content/Images/logo_firestone.png" height="80" width="80">
+                        </a>
+                    </div>
+                </div>
+                <div class="col s6 m2">
+                    <div>
+                        <a href="https://www.goodyear.eu/pl_pl/consumer/tires/car.html#/" target="_blank">
+                            <img src="~/Content/Images/logo_goodyear.png" height="80" width="80">
+                        </a>
+                    </div>
+                </div>
+                <div class="col s6 m2">
+                    <div>
+                        <a href="http://www.continental-opony.pl/samochod" target="_blank">
+                            <img src="~/Content/Images/logo_continental.png" height="80" width="80">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        @*********************************** footer ***********************************@
+
+        <div class="section grey darken-4 row">
+            <div class="col s3">
+                <span style="color:white">
+                    <br /><br /><br />Copyright by MT
+                    &copy;
+                </span>
+            </div>
+
+            <div class="col s3">
+                <div class="row">
+                    <div class="col3"> <span style="color:white"><b>Nasze oddziały:</b> </span></div>
+                </div>
+                <div class="row">
+                    <div class="col3">
+                        <span style="color:white">
+                            Kraków <br />
+                            ul.Główna 25 <br />
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col s3">
+                <div class="row">
+                    <div class="col3">Warszawa</div>
+                </div>
+                <div class="row">
+                    <div class="col3">
+                        <span style="color:white">
+                            Warszawa <br />
+                            ul.Boczna 44 <br />
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col s3">
+                <div class="row">
+                    <div class="col3"> <span style="color:white"> <b>Dołącz do nas: </b> </span></div>
+                </div>
+                <div class="row">
+                    <div class="col3 rgba-yellow-light">
+                        <a href="#"><img src="~/Content/Images/fb.ico" height="40" width="38"></a>
+                        <a href="#"><img src="~/Content/Images/g.ico" height="40" width="38"></a>
+                        <a href="#"><img src="~/Content/Images/twitter.ico" height="40" width="38"></a>
+                        <a href="#"><img src="~/Content/Images/yt.ico" height="40" width="38"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--  Scripts-->
+        @*<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>*@
+        <script src="~/Scripts/jquery.validate.js"></script>
+        <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js"></script>
+        <script src="js/materialize.js"></script>
+        <script src="js/init.js"></script>
+        <script>
+            $(".button-collapse").sideNav();
+        </script>
+
+    </div>
+</body>
+</html>

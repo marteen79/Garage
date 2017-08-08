@@ -1,0 +1,22 @@
+﻿<a href="@Url.Action("Index", "Koszyk")" class="tooltip">
+    <img src="~/Content/Images/koszyk2.png" height="55" width="55"/>
+
+    @*@Html.ActionLink("Koszyk", "Index", "Koszyk")*@
+    <span>
+        <b>Stan koszyka: </b>
+        <img src="~/Content/Images/koszyk2.png" height="30" width="30" />  <br/><br />
+        Ilość towarów: @ViewData["LiczbaTowarowWKoszyku"]
+        <br/>
+        Wartość zamówienia: @String.Format("{0:F}", ViewData["WartscTowarowWKoszyku"])
+    </span>
+</a>
+
+
+
+@*<a href="#" class="tooltip">
+    Tooltip
+    <span>
+        ilość: @ViewData["LiczbaTowarowWKoszyku"]
+        wartość: @String.Format("{0:F}", ViewData["WartscTowarowWKoszyku"])
+    </span>
+</a>*@

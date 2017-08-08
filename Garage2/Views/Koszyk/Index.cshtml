@@ -1,0 +1,73 @@
+﻿@model Garage2.Models.Sklep.DaneDoKoszyka
+
+@{
+    ViewBag.Title = "Koszyk";
+    Layout = "~/Views/Shared/_SklepLayout.cshtml";
+}
+<div class="row">
+    <div class="col s12 l8 offset-l2">
+        <div style="background-color: #757575">
+            <p style="text-align:center;font-size:24px;color:white;padding:5px; text-transform:uppercase">
+               <i class="material-icons medium left">shopping_cart</i> Koszyk
+                <i class="material-icons medium right">shopping_cart</i>
+
+            </p>
+            <hr />
+        </div>
+
+        <table class="" table amber darken-1"">
+            <tr>
+                <th>
+                    Nazwa towaru
+                </th>
+                <th>
+                    Cena
+                </th>
+                <th>
+                    Ilość
+                </th>
+                <th></th>
+            </tr>
+            @foreach (var item in Model.ElementyKoszyka)
+            {
+                <tr>
+                    <td>
+                        @Html.ActionLink(item.Towar.Nazwa, "Szczegoly", "Sklep", new { id = item.IdTowaru }, null)
+                    </td>
+                    <td>
+                        @String.Format("{0:F}", item.Towar.Cena)
+                    </td>
+                    <td>
+                        @String.Format("{0:F}", item.Ilosc)
+                    </td>
+                    <td>
+                        <button class="myButton tooltipped" data-position="right" data-delay="30" data-tooltip="Usuń" type="button"
+                                onclick="location.href='@Url.Action("UsunZKoszyka","Koszyk",new { id = item.IdTowaru },"")'">
+                            <i class="material-icons center">delete</i>
+                        </button>
+                        @*@Html.ActionLink("Usuń", "UsunZKoszyka", "Koszyk", new { id = item.IdTowaru }, "")*@
+                    </td>
+                </tr>
+            }
+        </table>
+
+        <div>
+            <h4>Razem:@String.Format("{0:F}", Model.Razem) </h4>
+        </div>
+
+        @*<div>
+            @Html.ActionLink("Wyczyść koszyk", "UsunWszystkieZKoszyka", "Koszyk")
+        </div>*@
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <button class="myButton1" type="button" onclick="location.href='@Url.Action("UsunWszystkieZKoszyka", "Koszyk")'"> wyczyść koszyk  </button>
+                <button class="myButton1" type="button" onclick="location.href='@Url.Action("Dane", "Zakup")'"> kup teraz  </button>
+
+            </div>
+        </div>
+        @*<div>
+            @Html.ActionLink("Kup teraz", "Dane", "Zakup")
+        </div>*@
+
+    </div>
+</div>

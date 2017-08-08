@@ -1,0 +1,28 @@
+﻿@model Garage2.Models.CompanyProfile
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h4>PROFIL FIRMY - SZCZEGÓŁY <img src="~/Content/Images/comment-text.png" /> </h4>
+<br />
+
+<div>
+
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ProfileContent)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProfileContent)
+        </dd>
+
+    </dl>
+</div>
+<div class="col-md-offset-2 col-md-10">
+    <button class="waves-effect-3 waves-light btn" type="button" onclick="location.href='@Url.Action("Edit","CompanyProfiles",new { id = Model.CompanyProfileId })'"> Edycja  </button>
+    <button class="waves-effect-3 waves-light btn" type="button" onclick="location.href='@Url.Action("AdminIndex","CompanyProfiles",new { id = Model.CompanyProfileId })'"> Powrót do listy  </button>
+</div>
+

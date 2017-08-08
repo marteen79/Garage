@@ -1,0 +1,137 @@
+﻿@model Garage2.Models.Sklep.Towar
+
+@{
+    ViewBag.Title = "Delete";
+}
+<h4>USUWANIE <img src="~/Content/Images/delete-empty.png" /> </h4>
+<h5><span style="color:red">Czy na pewno usunąć wybraną pozycję?</span></h5>
+<br />
+<div>
+    <table class="tableadmin responsive-table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.IdTowaru)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nazwa)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Kod)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cena)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FotoUrl)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Opis)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Promocja)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdRodzaju)
+            </th>
+        </tr>
+        <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => Model.IdTowaru)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => Model.Nazwa)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => Model.Kod)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => Model.Cena)
+                </td>
+                <td>
+                    <img src="@Model.FotoUrl" height="40" width="40" />
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => Model.Opis)
+                </td>
+                <td>
+                    @Html.EditorFor(modelItem => Model.Promocja)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => Model.IdRodzaju)
+                </td>
+            </tr>   
+    </table>
+    <br/>
+            @*<dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.IdTowaru)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.IdTowaru)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Nazwa)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Nazwa)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Kod)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Kod)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Cena)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Cena)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.FotoUrl)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.FotoUrl)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Opis)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Opis)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Promocja)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Promocja)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.IdRodzaju)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.IdRodzaju)
+                </dd>
+
+            </dl>*@
+
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+
+                <div class="form-actions no-color">
+                    <input type="submit" value="Usuń" class="waves-effect-3 waves-light btn" />
+                    <button class="waves-effect-3 waves-light btn" type="button" onclick="location.href='@Url.Action("AdminIndex","Sklep")'"> Powrót do listy  </button>
+                </div>
+            }
+</div>
+
+

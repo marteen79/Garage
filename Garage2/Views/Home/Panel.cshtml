@@ -1,0 +1,30 @@
+﻿
+@{
+    ViewBag.Title = "Panel";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div style="background-color:#bdbdbd">
+    <div style="background-color: #757575">
+        <p style="text-align:center;font-size:24px;color:white;padding:15px; text-transform:uppercase">Administation panel
+           
+        </p>
+        <hr />
+    </div>
+    <button class="myButton1" type="button" onclick="location.href='@Url.Action("AdminIndex","Hours")'"> Godziny </button>
+    <button class="myButton1" type="button"> click me </button>
+    <br />
+    <button class="myButton1" type="button" onclick="location.href='@Url.Action("AdminIndex","Offers")'"> Usługi </button>
+    <button class="myButton1" type="button"> click me </button>
+    <br />
+    <button class="myButton1" type="button" onclick="location.href='@Url.Action("AdminIndex","Sklep")'"> Dodaj produkt  </button>
+    <button class="myButton1" type="button"> click me </button>
+    <br />
+    <button class="myButton1" type="button" onclick="location.href='@Url.Action("Create","Customers")'"> Dodaj klienta </button>
+    <button class="myButton1" type="button"> click me </button>
+    <br />
+    <button class="myButton1" type="button" onclick="location.href='@Url.Action("AdminIndex","CompanyProfiles")'"> Historia firmy </button>
+    <button class="myButton1" type="button"> click me </button>
+
+
+</div>

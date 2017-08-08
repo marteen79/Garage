@@ -1,0 +1,58 @@
+﻿@model Garage2.Models.Admin.Customer
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Profil klienta - szczegóły</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Surname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Surname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Phone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Phone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Discount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Discount)
+        </dd>
+
+    </dl>
+</div>
+<div class="col-md-offset-2 col-md-10">
+    <button class="waves-effect-3 waves-light btn" type="button" onclick="location.href='@Url.Action("Edit","Customers",new { id = Model.CustomerId })'"> Edycja  </button>
+    <button class="waves-effect-3 waves-light btn" type="button" onclick="location.href='@Url.Action("AdminIndex","Customers",new { id = Model.CustomerId })'"> Powrót do listy  </button>
+</div>
+

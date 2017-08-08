@@ -1,0 +1,29 @@
+﻿@model IEnumerable<Garage2.Models.Admin.Offer>
+
+@{
+    ViewBag.Title = "Usługi";
+}
+
+<table class="table amber darken-1">
+    <tr>
+        <th class="amber darken-1">
+            @Html.DisplayNameFor(model => model.ServiceName)
+        </th>
+        <th class="amber darken-1">
+            @Html.DisplayNameFor(model => model.Price)
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td class="amber accent-2">
+                @Html.DisplayFor(modelItem => item.ServiceName)
+            </td>
+            <td class="amber accent-2">
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+        </tr>
+    }
+
+</table>

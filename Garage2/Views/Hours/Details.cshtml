@@ -1,0 +1,36 @@
+﻿@model Garage2.Models.Admin.Hour
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h4>GODZINY PRACY - SZCZEGÓŁY <img src="~/Content/Images/comment-text.png" /> </h4>
+<br />
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Day)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Day)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Hours)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Hours)
+        </dd>
+
+    </dl>
+</div>
+<br/>
+<div class="col-md-offset-2 col-md-10">
+    <button class="waves-effect-3 waves-light btn" type="button" onclick="location.href='@Url.Action("Edit","Hours",new { id = Model.HourId })'"> Edycja  </button>
+    <button class="waves-effect-3 waves-light btn" type="button" onclick="location.href='@Url.Action("AdminIndex","Hours",new { id = Model.HourId })'"> Powrót do listy  </button>
+</div>
+

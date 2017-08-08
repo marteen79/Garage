@@ -1,0 +1,28 @@
+﻿@model IEnumerable<Garage2.Models.CompanyProfile>
+
+@{
+    ViewBag.Title = "O nas";
+}
+
+<div class="row">
+    <div class="col s12 m7 offset-m2">
+        <div class="card">
+            <div class="card-image">
+                <img src="~/Content/Images/team2.png"/>
+            </div>
+            <div class="card-content">
+                <p>
+                    @foreach (var item in Model)
+                    {
+                                @Html.DisplayFor(modelItem => item.ProfileContent)
+                    }
+                </p>
+            </div>
+            <div class="card-action">
+                <center>
+                    <a href="#">Zobacz galerię</a>
+                </center>
+            </div>
+        </div>
+    </div>
+</div>

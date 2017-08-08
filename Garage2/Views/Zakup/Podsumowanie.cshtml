@@ -1,0 +1,53 @@
+﻿@model Garage2.Models.Sklep.Zamowienie
+
+@{
+    ViewBag.Title = "Podsumowanie";
+}
+<h2>Serdecznie dziękujęmy za zamówienie.</h2>
+<h2>Zamówienie zostało przyjęte do realizacji.</h2>
+<br />
+<h3>Dane zamówienia zamówienia:</h3>
+Data i czas zamówienia: @Model.DataZamowienia<br />
+Imię: @Model.Imie<br />
+Nazwisko: @Model.Nazwisko <br />
+Ulica: @Model.Ulica <br />
+Miasto: @Model.Miasto <br />
+Numer telefonu: @Model.NumerTelefonu <br />
+Email: @Model.Email <br />
+<br />
+<br />
+<h3>Wartość zamówienia: @Model.Razem </h3>
+<br />
+<h3>Szczegóły zamówienia:</h3>
+<table>
+    <tr>
+        <th>
+            Nazwa towaru
+        </th>
+        <th>
+            Cena
+        </th>
+        <th>
+            Ilość
+        </th>
+    </tr>
+    @foreach (var item in Model.PozycjaZamowienia)
+    {
+        <tr>
+            <td>
+                @Html.ActionLink(item.Towar.Nazwa, "Szczegoly", "Sklep", new { id = item.IdTowaru }, null)
+            </td>
+            <td>
+                @String.Format("{0:F}", item.Towar.Cena)
+            </td>
+            <td>
+                @String.Format("{0:F}", item.Ilosc)
+            </td>
+        </tr>
+    }
+</table>
+
+<h2>Gratulujemy wyboru!!!</h2>
+<div>
+    @Html.ActionLink("Dokonaj kolejnego zamówienia", "Promocje", "Sklep")
+</div>
